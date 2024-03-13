@@ -25,7 +25,6 @@ public class MowerService {
     private static final String SPACE = " ";
     private static final Logger LOGGER = Logger.getLogger(MowerService.class.getName());
 
-
     private Mower mower;
 
     public MowerService(File file) throws FileNotFoundException {
