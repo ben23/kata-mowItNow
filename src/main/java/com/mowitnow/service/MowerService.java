@@ -17,10 +17,14 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.List;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class MowerService {
 
     private static final String SPACE = " ";
+    private static final Logger LOGGER = Logger.getLogger(MowerService.class.getName());
+
 
     private Mower mower;
 
@@ -32,7 +36,7 @@ public class MowerService {
         return mower;
     }
 
-    public void run(File file) throws FileNotFoundException {
+    private void run(File file) throws FileNotFoundException {
         try (Scanner scanner = new Scanner(file)) {
             Position position = null;
             Direction direction = null;
@@ -56,7 +60,10 @@ public class MowerService {
                     mower = new Mower(lawn, position, direction);
                     List<Command> commands = CommandUtil.convert(line);
                     mower.apply(commands);
-                    System.out.printf("Position %d %d %s%n", mower.getPosition().x(), mower.getPosition().y(), mower.getDirection());
+
+                    String result = String.format("Position %d %d %s%n", mower.getPosition().x(),
+                            mower.getPosition().y(), mower.getDirection());
+                    LOGGER.log(Level.INFO, result);
                 }
                 lineNumber++;
             }
