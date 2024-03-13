@@ -30,7 +30,7 @@ public class MowerService {
         return mower;
     }
 
-    private void run(File file) throws FileNotFoundException {
+    public void run(File file) throws FileNotFoundException {
         try (Scanner scanner = new Scanner(file)) {
             Position position = null;
             Direction direction = null;
