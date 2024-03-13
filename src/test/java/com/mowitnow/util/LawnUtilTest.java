@@ -9,21 +9,6 @@ import org.junit.jupiter.api.Test;
 
 class LawnUtilTest {
 
-
-    @Test
-    @DisplayName("Should convert Lawn line 5 5")
-    void shouldConvertLawnLine55() {
-        //Given
-        String line = "5 5";
-
-        //When
-        Lawn Lawn = LawnUtil.convert(line);
-
-        //Then
-        Assertions.assertEquals(6, Lawn.length());
-        Assertions.assertEquals(6, Lawn.height());
-    }
-
     @Test
     @DisplayName("Should convert Lawn line 2 7")
     void shouldConvertLawnLine27() {
@@ -34,8 +19,8 @@ class LawnUtilTest {
         Lawn Lawn = LawnUtil.convert(line);
 
         //Then
-        Assertions.assertEquals(3, Lawn.length());
-        Assertions.assertEquals(8, Lawn.height());
+        Assertions.assertEquals(2, Lawn.length());
+        Assertions.assertEquals(7, Lawn.height());
     }
 
     @Test

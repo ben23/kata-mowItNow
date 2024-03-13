@@ -18,7 +18,7 @@ public class LawnUtil {
         }
         String[] values = line.split(SPACE);
         try {
-            return new Lawn(Integer.parseInt(values[0]) + 1, Integer.parseInt(values[1]) + 1);
+            return new Lawn(Integer.parseInt(values[0]), Integer.parseInt(values[1]) );
         } catch (NumberFormatException e) {
             throw new InvalidLawnLineException("Invalid Filed Line");
         }

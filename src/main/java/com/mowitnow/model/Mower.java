@@ -41,7 +41,7 @@ public class Mower {
     private void move() {
         switch (direction) {
             case E -> {
-                if (this.position.x() < lawn.length() - 1) {
+                if (this.position.x() < lawn.length()) {
                     this.position = new Position(position.x() + 1, position.y());
                 }
             }
@@ -51,7 +51,7 @@ public class Mower {
                 }
             }
             case N -> {
-                if (this.position.y() < lawn.length() - 1) {
+                if (this.position.y() < lawn.length()) {
                     this.position = new Position(position.x(), position.y() + 1);
                 }
             }
