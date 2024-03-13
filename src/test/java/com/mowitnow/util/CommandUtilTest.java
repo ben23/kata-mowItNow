@@ -3,6 +3,7 @@ package com.mowitnow.util;
 import com.mowitnow.exception.InvalidCommandException;
 import com.mowitnow.model.Command;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -14,7 +15,8 @@ class CommandUtilTest {
 
 
     @Test
-    void should_convert_GAGAGAGAA_from_string_to_commands() {
+    @DisplayName("Should convert GAGAGAGAA from string to commands")
+    void shouldConvertGAGAGAGAAFromStringToCommands() {
         //Given
         String line = "GAGAGAGAA";
 
@@ -29,7 +31,8 @@ class CommandUtilTest {
     }
 
     @Test
-    void should_throw_exception_invalid_command() {
+    @DisplayName("Should throw exception invalid command")
+    void shouldThrowExceptionInvalidCommand() {
 
         //Given
         String line = "erdrr74";

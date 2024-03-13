@@ -3,13 +3,15 @@ package com.mowitnow.util;
 import com.mowitnow.exception.InvalidDirectionException;
 import com.mowitnow.model.Direction;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 class DirectionUtilTest {
 
 
     @Test
-    void should_convert_valid_value_E() {
+    @DisplayName("Should convert valid value E")
+    void shouldConvertValidValueE() {
         //Given
         String value = "E";
 
@@ -21,7 +23,8 @@ class DirectionUtilTest {
     }
 
     @Test
-    void should_convert_valid_value_N() {
+    @DisplayName("Should convert valid value N")
+    void shouldConvertValidValueN() {
         //Given
         String value = "N";
 
@@ -33,7 +36,8 @@ class DirectionUtilTest {
     }
 
     @Test
-    void should_convert_valid_value_W() {
+    @DisplayName("Should convert valid value W")
+    void shouldConvertValidValueW() {
         //Given
         String value = "W";
 
@@ -45,7 +49,8 @@ class DirectionUtilTest {
     }
 
     @Test
-    void should_convert_valid_value_S() {
+    @DisplayName("Should convert valid value S")
+    void shouldConvertValidValueS() {
         //Given
         String value = "S";
 
@@ -57,7 +62,8 @@ class DirectionUtilTest {
     }
 
     @Test
-    void should_convert_invalid_value() {
+    @DisplayName("Should convert invalid value")
+    void shouldConvertInvalidValue() {
         //Given
         String value = "T";
 

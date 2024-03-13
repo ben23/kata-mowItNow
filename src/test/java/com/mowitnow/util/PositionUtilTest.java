@@ -4,12 +4,14 @@ import com.mowitnow.exception.InvalidPositionException;
 import com.mowitnow.exception.PositionDataNotFoundException;
 import com.mowitnow.model.Position;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 class PositionUtilTest {
 
     @Test
-    void should_convert_position_data_1_2() {
+    @DisplayName("Should convert position data 1 2")
+    void shouldConvertPositionData12() {
         //Given
         String[] data = {"1", "2", "E"};
 
@@ -22,7 +24,8 @@ class PositionUtilTest {
     }
 
     @Test
-    void should_convert_position_data_3_3() {
+    @DisplayName("Should convert position data 3 3")
+    void shouldConvertPositionData33() {
         //Given
         String[] data = {"3", "3", "T"};
 
@@ -36,7 +39,8 @@ class PositionUtilTest {
 
 
     @Test
-    void should_throw_exception_position_data_empty() {
+    @DisplayName("Should thrown exception position data empty")
+    void shouldThrowExceptionPositionDataEmpty() {
         //Given
         String[] data = {};
 
@@ -48,7 +52,8 @@ class PositionUtilTest {
     }
 
     @Test
-    void should_throw_exception_position_data_incomplete() {
+    @DisplayName("Should thrown exception position data incomplete")
+    void shouldThrowExceptionPositionDataIncomplete() {
         //Given
         String[] data = {"5"};
 
@@ -61,7 +66,8 @@ class PositionUtilTest {
 
 
     @Test
-    void should_throw_exception_position_data_invalid() {
+    @DisplayName("Should thrown exception position data invalid")
+    void shouldThrowExceptionPositionDataInvalid() {
         //Given
         String[] data = {"2", "t", "E"};
 

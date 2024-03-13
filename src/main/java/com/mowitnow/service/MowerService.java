@@ -1,23 +1,19 @@
 package com.mowitnow.service;
 
-/*import com.mowitnow.exception.LawnLineNotFoundException;
-import com.mowitnow.exception.InvalidPositionException;*/
 
 import com.mowitnow.exception.InvalidPositionException;
 import com.mowitnow.exception.LawnLineNotFoundException;
-import com.mowitnow.util.CommandUtil;
-import com.mowitnow.util.DirectionUtil;
-import com.mowitnow.util.LawnUtil;
-import com.mowitnow.util.PositionUtil;
-import com.mowitnow.model.Command;
 import com.mowitnow.model.Direction;
 import com.mowitnow.model.Lawn;
 import com.mowitnow.model.Mower;
 import com.mowitnow.model.Position;
+import com.mowitnow.util.CommandUtil;
+import com.mowitnow.util.DirectionUtil;
+import com.mowitnow.util.LawnUtil;
+import com.mowitnow.util.PositionUtil;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.List;
 import java.util.Scanner;
 
 public class MowerService {
