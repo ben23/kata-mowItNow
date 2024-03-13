@@ -3,6 +3,7 @@ package com.mowitnow.service;
 
 import com.mowitnow.exception.InvalidPositionException;
 import com.mowitnow.exception.LawnLineNotFoundException;
+import com.mowitnow.model.Command;
 import com.mowitnow.model.Direction;
 import com.mowitnow.model.Lawn;
 import com.mowitnow.model.Mower;
@@ -14,6 +15,7 @@ import com.mowitnow.util.PositionUtil;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.List;
 import java.util.Scanner;
 
 public class MowerService {
@@ -52,7 +54,8 @@ public class MowerService {
                     direction = DirectionUtil.convert(values[2]);
                 } else {
                     mower = new Mower(lawn, position, direction);
-                    mower.apply(CommandUtil.convert(line));
+                    List<Command> commands = CommandUtil.convert(line);
+                    mower.apply(commands);
                     System.out.printf("Position %d %d %s%n", mower.getPosition().x(), mower.getPosition().y(), mower.getDirection());
                 }
                 lineNumber++;
