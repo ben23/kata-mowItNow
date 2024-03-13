@@ -2,7 +2,6 @@ package com.mowitnow.util;
 
 import com.mowitnow.exception.InvalidPositionException;
 import com.mowitnow.exception.PositionDataNotFoundException;
-import com.mowitnow.model.Lawn;
 import com.mowitnow.model.Position;
 
 public class PositionUtil {
