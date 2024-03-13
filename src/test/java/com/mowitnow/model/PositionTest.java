@@ -14,11 +14,10 @@ class PositionTest {
 
     @ParameterizedTest
     @MethodSource("providePositionAndValidationPositionResult")
-    @DisplayName("Should invalid position when lawn is null")
-    void shouldCheckValidationPosition(Position input, boolean expected) {
+    @DisplayName("Should check position according to the lawn")
+    void shouldCheckPositionAccordingToTheLawn(Position input, boolean expected) {
         //Given
         Lawn lawn = new Lawn(6, 6);
-
 
         //When
         boolean actual = input.isValidPosition(lawn);
