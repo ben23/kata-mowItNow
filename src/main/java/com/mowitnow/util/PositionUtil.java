@@ -15,10 +15,9 @@ public class PositionUtil {
             throw new PositionDataNotFoundException("Position data is empty or incomplete");
         }
         try {
-            position = new Position(Integer.parseInt(values[0]), Integer.parseInt(values[1]));
+            return new Position(Integer.parseInt(values[0]), Integer.parseInt(values[1]));
         } catch (NumberFormatException e) {
             throw new InvalidPositionException("Invalid Position Data");
         }
-        return position;
     }
 }

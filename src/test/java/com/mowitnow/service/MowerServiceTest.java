@@ -1,6 +1,10 @@
 package com.mowitnow.service;
 
 import com.mowitnow.exception.InvalidPositionException;
+import com.mowitnow.model.Direction;
+import com.mowitnow.model.Lawn;
+import com.mowitnow.model.Mower;
+import com.mowitnow.model.Position;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -9,6 +13,8 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Objects;
 
 import static com.mowitnow.model.Direction.E;
@@ -33,9 +39,10 @@ class MowerServiceTest {
         }
 
         //Then
-        Assertions.assertEquals(1, mowerService.getMower().getPosition().x());
-        Assertions.assertEquals(3, mowerService.getMower().getPosition().y());
-        Assertions.assertEquals(N, mowerService.getMower().getDirection());
+        Mower mower = mowerService.getMowers().stream().findFirst().get();
+        Assertions.assertEquals(1, mower.getPosition().x());
+        Assertions.assertEquals(3, mower.getPosition().y());
+        Assertions.assertEquals(N, mower.getDirection());
 
     }
 
@@ -55,10 +62,10 @@ class MowerServiceTest {
         }
 
         //Then
-        Assertions.assertEquals(5, mowerService.getMower().getPosition().x());
-        Assertions.assertEquals(1, mowerService.getMower().getPosition().y());
-        Assertions.assertEquals(E, mowerService.getMower().getDirection());
-
+        Mower mower = mowerService.getMowers().get(1);
+        Assertions.assertEquals(5, mower.getPosition().x());
+        Assertions.assertEquals(1, mower.getPosition().y());
+        Assertions.assertEquals(E, mower.getDirection());
     }
 
 
