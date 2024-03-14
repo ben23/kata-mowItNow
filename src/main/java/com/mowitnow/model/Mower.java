@@ -62,4 +62,22 @@ public class Mower {
             }
         }
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Mower mower)) return false;
+
+        if (!getLawn().equals(mower.getLawn())) return false;
+        if (!getPosition().equals(mower.getPosition())) return false;
+        return getDirection() == mower.getDirection();
+    }
+
+    @Override
+    public int hashCode() {
+        int result = getLawn().hashCode();
+        result = 31 * result + getPosition().hashCode();
+        result = 31 * result + getDirection().hashCode();
+        return result;
+    }
 }

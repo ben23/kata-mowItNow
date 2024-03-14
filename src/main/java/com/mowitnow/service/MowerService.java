@@ -60,10 +60,14 @@ public class MowerService {
                 lineNumber++;
             }
 
-            mowers.forEach(mower -> LOGGER.log(Level.INFO,
-                    String.format("Position %d %d %s%n", mower.getPosition().x(),
-                            mower.getPosition().y(), mower.getDirection())));
+            displayMowerPositions();
         }
+    }
+
+    private void displayMowerPositions() {
+        mowers.forEach(mower -> LOGGER.log(Level.INFO,
+                String.format("Position %d %d %s%n", mower.getPosition().x(),
+                        mower.getPosition().y(), mower.getDirection())));
     }
 
     private Position extractPosition(String[] values, Lawn lawn) {

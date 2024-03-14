@@ -39,10 +39,8 @@ class MowerServiceTest {
         }
 
         //Then
-        Mower mower = mowerService.getMowers().stream().findFirst().get();
-        Assertions.assertEquals(1, mower.getPosition().x());
-        Assertions.assertEquals(3, mower.getPosition().y());
-        Assertions.assertEquals(N, mower.getDirection());
+        List<Mower> expected = List.of(new Mower(new Lawn(5, 5), new Position(1, 3), N));
+        Assertions.assertEquals(expected, mowerService.getMowers());
 
     }
 
@@ -62,10 +60,9 @@ class MowerServiceTest {
         }
 
         //Then
-        Mower mower = mowerService.getMowers().get(1);
-        Assertions.assertEquals(5, mower.getPosition().x());
-        Assertions.assertEquals(1, mower.getPosition().y());
-        Assertions.assertEquals(E, mower.getDirection());
+        List<Mower> expected = List.of(new Mower(new Lawn(5, 5), new Position(1, 3), N),
+                new Mower(new Lawn(5, 5), new Position(5, 1), E));
+        Assertions.assertEquals(expected, mowerService.getMowers());
     }
 
 
