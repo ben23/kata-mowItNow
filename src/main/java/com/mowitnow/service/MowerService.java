@@ -37,12 +37,13 @@ public class MowerService {
 
     private void run(File file) throws FileNotFoundException {
         try (Scanner scanner = new Scanner(file)) {
-            mowers = new ArrayList<>();
             Position position = null;
             Direction direction = null;
-            int lineNumber = 1;
 
             Lawn lawn = extractLawn(scanner);
+
+            int lineNumber = 1;
+            mowers = new ArrayList<>();
 
             while (scanner.hasNextLine()) {
                 String line = scanner.nextLine();
